@@ -45,14 +45,13 @@ install -d  $RPM_BUILD_ROOT{%{_pixmapsdir},%{_applnkdir}/Games}
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Games
 install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 
-gzip -9nf readme.txt
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc readme.txt
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
 %{_pixmapsdir}/*
