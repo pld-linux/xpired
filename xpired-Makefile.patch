@@ -1,17 +1,18 @@
-diff -durN xpired-1.1-source.orig/Makefile xpired-1.1-source/Makefile
---- xpired-1.1-source.orig/Makefile	Thu Apr 18 18:10:14 2002
-+++ xpired-1.1-source/Makefile	Sun Apr 28 19:28:40 2002
-@@ -2,7 +2,7 @@
+--- src.orig/Makefile	2003-10-27 18:37:27.000000000 +0000
++++ src/Makefile	2003-10-27 18:39:31.000000000 +0000
+@@ -1,8 +1,8 @@
+-PREFIX=/usr/local
++PREFIX=/usr
  SHARE_PREFIX=$(PREFIX)/share/xpired
  CFLAGS=`sdl-config --cflags` -DUNIX -DPREFIX=\"$(PREFIX)\" -DSHARE_PREFIX=\"$(SHARE_PREFIX)\"
- LIBS=`sdl-config --libs` -lSDL -lSDL_mixer -lSDL_image -lSDL_gfx
--CC=c++ $(CFLAGS)
-+CC=c++ $(CFLAGS) $(OPTFLAGS)
+ LDFLAGS=`sdl-config --libs` -lSDL -lSDL_mixer -lSDL_image -lSDL_gfx
+-CC=gcc
++CC=gcc $(CFLAGS) $(OPTFLAGS)
  
+ BINARIES = xpired xpiredit
  
- all: xpired xpiredit
-@@ -23,11 +23,11 @@
- 	rm xpired xpiredit xp*.o
+@@ -20,11 +20,11 @@
+ 	rm $(BINARIES) xp*.o
  
  install: xpired xpiredit xpired.lvl xpired.cfg bgimages.txt
 -	if [ ! -d $(PREFIX)/bin ]; then mkdir -p $(PREFIX)/bin; fi
