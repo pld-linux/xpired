@@ -1,0 +1,32 @@
+diff -durN xpired-1.1-source.orig/Makefile xpired-1.1-source/Makefile
+--- xpired-1.1-source.orig/Makefile	Thu Apr 18 18:10:14 2002
++++ xpired-1.1-source/Makefile	Sun Apr 28 19:28:40 2002
+@@ -2,7 +2,7 @@
+ SHARE_PREFIX=$(PREFIX)/share/xpired
+ CFLAGS=`sdl-config --cflags` -DUNIX -DPREFIX=\"$(PREFIX)\" -DSHARE_PREFIX=\"$(SHARE_PREFIX)\"
+ LIBS=`sdl-config --libs` -lSDL -lSDL_mixer -lSDL_image -lSDL_gfx
+-CC=c++ $(CFLAGS)
++CC=c++ $(CFLAGS) $(OPTFLAGS)
+ 
+ 
+ all: xpired xpiredit
+@@ -23,11 +23,11 @@
+ 	rm xpired xpiredit xp*.o
+ 
+ install: xpired xpiredit xpired.lvl xpired.cfg bgimages.txt
+-	if [ ! -d $(PREFIX)/bin ]; then mkdir -p $(PREFIX)/bin; fi
+-	if [ ! -d $(SHARE_PREFIX) ]; then mkdir -p $(SHARE_PREFIX); fi
+-	cp xpired xpiredit $(PREFIX)/bin
+-	cp xpired.lvl xpired.cfg bgimages.txt $(SHARE_PREFIX)
+-	cp -r img/ $(SHARE_PREFIX)
+-	cp -r snd/ $(SHARE_PREFIX)
+-	if [ -f readme.txt ]; then cp readme.txt $(SHARE_PREFIX); fi
+-	if [ -f xpired.dmo ]; then cp xpired.dmo $(SHARE_PREFIX); fi
++	if [ ! -d $(DESTDIR)$(PREFIX)/bin ]; then mkdir -p $(DESTDIR)$(PREFIX)/bin; fi
++	if [ ! -d $(DESTDIR)$(SHARE_PREFIX) ]; then mkdir -p $(DESTDIR)$(SHARE_PREFIX); fi
++	cp xpired xpiredit $(DESTDIR)$(PREFIX)/bin
++	cp xpired.lvl xpired.cfg bgimages.txt $(DESTDIR)$(SHARE_PREFIX)
++	cp -r img/ $(DESTDIR)$(SHARE_PREFIX)
++	cp -r snd/ $(DESTDIR)$(SHARE_PREFIX)
++	if [ -f readme.txt ]; then cp readme.txt $(DESTDIR)$(SHARE_PREFIX); fi
++	if [ -f xpired.dmo ]; then cp xpired.dmo $(DESTDIR)$(SHARE_PREFIX); fi
