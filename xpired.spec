@@ -28,15 +28,17 @@ Celem gry na ka¿dym poziomie jest wyj¶æ z kwadratu, unikaj±c
 eksploduj±cych beczek i innych zabójczych rzeczy.
 
 %prep
-%setup -qn %{name}-%{version}-source
-%patch0 -p1
+%setup -q -c
+%patch0 -p0
 
 %build
+cd src/
 %{__make} OPTFLAGS="%{rpmcflags}" PREFIX=%{_prefix}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
+cd src/
 %{__make} install PREFIX=%{_prefix} DESTDIR=$RPM_BUILD_ROOT
 
 install -d  $RPM_BUILD_ROOT{%{_pixmapsdir},%{_applnkdir}/Games}
@@ -50,7 +52,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc readme.txt
+%doc src/readme.txt
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
 %{_pixmapsdir}/*
