@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=xpired
+Comment=X-pired action-puzzle game
+Comment[pl]=X-pired - gra zręcznościowo-logiczna
+Icon=xpired.png
+Exec=xpired
+Terminal=0
+Type=Application
+# vi: encoding=utf-8
