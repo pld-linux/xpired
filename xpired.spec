@@ -3,7 +3,7 @@ Summary(pl):	Gra zrêczno¶ciowo-logiczna
 Name:		xpired
 Version:	1.1
 Release:	1
-License:	Unknown
+License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://xpired.temnet.org/files/%{name}-%{version}-linux_source.tar.gz
 Source1:	%{name}.desktop
