@@ -5,7 +5,10 @@ Version:	1.1
 Release:	1
 License:	GPL
 Group:		X11/Applications/Games
-Source0:	http://xpired.temnet.org/files/%{name}-%{version}-linux_source.tar.gz
+#Source0:	http://xpired.temnet.org/files/%{name}-%{version}-linux_source.tar.gz
+#Source0:	http://dl.sourceforge.net/xpired/%{name}-%{version}-linux_source.tar.gz
+Source0:	%{name}-%{version}-linux_source.tar.gz
+# Source0-md5:	cb14c0c8fb1f027e4eec3a5c8c6ce7a2
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 Patch0:		%{name}-Makefile.patch
