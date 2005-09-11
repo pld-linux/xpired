@@ -2,7 +2,7 @@ Summary:	Action-puzzle game
 Summary(pl):	Gra zrêczno¶ciowo-logiczna
 Name:		xpired
 Version:	1.22
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/xpired/%{name}-%{version}-linux_source.tar.gz
@@ -32,20 +32,22 @@ eksploduj±cych beczek i innych zabójczych rzeczy.
 %patch0 -p0
 
 %build
-cd src/
-%{__make} OPTFLAGS="%{rpmcflags}" PREFIX=%{_prefix}
+%{__make} -C src \
+	OPTFLAGS="%{rpmcflags}" \
+	PREFIX=%{_prefix}
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_desktopdir},%{_sysconfdir}}
 
-cd src/
-%{__make} install PREFIX=%{_prefix} DESTDIR=$RPM_BUILD_ROOT
+%{__make} -C src install \
+	PREFIX=%{_prefix} \
+	DESTDIR=$RPM_BUILD_ROOT
 
-install -d  $RPM_BUILD_ROOT{%{_pixmapsdir},%{_applnkdir}/Games}
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Games
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
-
+install src/xpired.cfg	$RPM_BUILD_ROOT%{_sysconfdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -54,6 +56,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc src/readme.txt
 %attr(755,root,root) %{_bindir}/*
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/%{name}.cfg
 %{_datadir}/%{name}
 %{_pixmapsdir}/*
-%{_applnkdir}/Games/*
+%{_desktopdir}/xpired.desktop
