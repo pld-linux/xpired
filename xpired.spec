@@ -10,7 +10,6 @@ Source0:	http://dl.sourceforge.net/xpired/%{name}-%{version}-linux_source.tar.gz
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 Patch0:		%{name}-Makefile.patch
-Icon:		xpired.xpm
 URL:		http://xpired.sourceforge.net/
 BuildRequires:	SDL-devel
 BuildRequires:	SDL_mixer-devel
