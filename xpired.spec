@@ -32,6 +32,7 @@ eksploduj±cych beczek i innych zabójczych rzeczy.
 
 %build
 %{__make} -C src \
+	CC="%{__cc}" \
 	OPTFLAGS="%{rpmcflags}" \
 	PREFIX=%{_prefix}
 
