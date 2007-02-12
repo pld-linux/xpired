@@ -1,5 +1,5 @@
 Summary:	Action-puzzle game
-Summary(pl.UTF-8):   Gra zręcznościowo-logiczna
+Summary(pl.UTF-8):	Gra zręcznościowo-logiczna
 Name:		xpired
 Version:	1.22
 Release:	2
