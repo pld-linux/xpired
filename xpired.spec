@@ -1,5 +1,5 @@
 Summary:	Action-puzzle game
-Summary(pl):	Gra zrêczno¶ciowo-logiczna
+Summary(pl.UTF-8):   Gra zrÄ™cznoÅ›ciowo-logiczna
 Name:		xpired
 Version:	1.22
 Release:	2
@@ -22,9 +22,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 The goal of the game in each level is to reach the exit square,
 avoiding exploding barrels and other deadly stuff.
 
-%description -l pl
-Celem gry na ka¿dym poziomie jest wyj¶æ z kwadratu, unikaj±c
-eksploduj±cych beczek i innych zabójczych rzeczy.
+%description -l pl.UTF-8
+Celem gry na kaÅ¼dym poziomie jest wyjÅ›Ä‡ z kwadratu, unikajÄ…c
+eksplodujÄ…cych beczek i innych zabÃ³jczych rzeczy.
 
 %prep
 %setup -q -c
