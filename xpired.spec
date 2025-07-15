@@ -28,7 +28,7 @@ eksplodujących beczek i innych zabójczych rzeczy.
 
 %prep
 %setup -q -c
-%patch0 -p0
+%patch -P0 -p0
 
 %build
 %{__make} -C src \
